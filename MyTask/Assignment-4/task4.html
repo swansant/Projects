@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Information</title>
+	<style>
+		body {
+			background-color: #A0C3D2;
+    }
+	
+		h1, h3 {
+			color: #473C33;
+			text-align: center;
+	}	
+		
+	
+		button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 4px 5px 4px 5px;
+			text-align: center;
+			display: inline-block;
+			font-size: 15px;
+			margin: 15px 10px 20px 50px;
+			cursor: pointer;
+		}
+		
+		button:hover {
+			background-color: white;
+			color: black;
+			
+		}	
+		
+		.Check {
+			display: flex;
+			justify-content: center;
+			align-items: center;		
+		}
+		
+		.name {
+			padding: 100px 150px 100px 150px;
+			align-items: center;
+		}
+		
+		.age {
+			padding: 100px 150px 100px 150px;
+			align-items: center;
+		}	
+		
+	</style>
+	</head>
+	<body>
+	<h1>Birth Year</h1>
+	<hr>
+	<h3>Enter your details above: </h3>
+	<table class="Check">
+		<tr class="name">
+				<td>
+					<label>What is your name?</label>
+				</td>
+				
+				<td>
+					<input id ="name" type="text">
+				</td>
+				
+		</tr>
+		<tr class="age">
+				<td>
+					<label>How old are you?</label>
+				</td>
+				
+				<td>
+					<input id="age" type="number">
+				</td>
+				
+		</tr>
+			<td>
+				<button id="click" type="button" onclick="Year()">Search</button>
+			</td>
+			
+		<tr class="output">
+			<td>
+				<label>Result : <span id="result"></span></label>
+			</td>
+			
+		</tr>
+	</table>
+
+		
+<script>
+		
+		
+		function Year () {
+			const currentDate = new Date();
+			const currentYear = currentDate.getFullYear();
+			const userYear 	  = Number(document.getElementById('age').value);
+			const Click       = document.getElementById('click');
+			const currentName = document.getElementById('name').value;
+			const output 	  = document.getElementById('result');
+			const startYear   = currentYear - 1;
+			const finalYear   = startYear - userYear;
+			output.innerHTML = " Hello " + currentName + " You are born in " + finalYear + " year ";
+		}	
+</script>
+</body>
+</html>

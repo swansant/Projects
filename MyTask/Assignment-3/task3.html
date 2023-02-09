@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>BMI Calculator</title>
+	<style>
+		body {
+			background-color: gray;
+		}
+		
+		h1 {
+			text-align: center;
+			color: black;
+		}
+	
+		#calculate-button {
+			background-color: white;
+			color: white;
+			margin: 10px 50px 40px 400px;
+			border: none;
+			cursor: pointer;
+		}
+		
+			#bmi {
+			font-size: 15px;	
+		}
+		
+			#number, #H {
+			padding: 4px 5px 4px 5px;
+		}
+
+
+	</style>
+</head>
+<body>
+<h1>BMI Calculator</h1>
+	<div id="cal">
+	<div id="number">
+			<label>Weight (kg): </label>
+			<input type="number" id="weight">
+	</div>
+		<br />
+	<div id="H">
+			<label>Height (cm): </label> 
+			<input type="number" id="height">
+	</div>
+		<br />
+			<button type="button" onclick ="bmiCalculator()">Calculate</button>
+		<br />	
+			<label>BMI: <span id="bmi"></span></label>
+	</div>
+		
+<script>
+		
+	bmiCalculator  = function(){
+		let Weight = Number(document.getElementById("weight").value);
+		let Height = Number(document.getElementById("height").value);
+		let bmical = document.getElementById("bmi");
+		
+		var bmi          = (Weight/(Height/100) **2); 
+		bmical.innerHTML = bmi;
+	}
+		
+</script>
+</body>
+</html>

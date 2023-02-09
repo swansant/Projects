@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Table</title>
+		<style>
+			table {
+				border-collapse: collapse;
+				width: 50%;
+				margin: 0 auto;
+				
+			}
+
+			th, td {
+				border: 1px solid black;
+				padding: 10px;
+				text-align: center;
+			}
+
+			th {
+				background-color: #f2f2f2;
+			}	
+
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+	</head>	
+	<body>
+		<h1 id="header">Table</h1>
+		<hr>
+		<form>
+			Number of rows: <input type ="number" id="rows"><br>
+			Number of columns: <input type="number" id="columns"><br>
+			<button type="submit" onclick ="createTable()">Create Table</button>
+		</form>
+		<br>
+		<table id="myTable"></table>
+
+		<script>
+			createTable		= function() {
+				var rows 	= document.getElementById("rows").value;
+				var columns = document.getElementById("columns").value;
+				var table 	= document.getElementById("myTable");
+
+				for (var i = 0; i < rows; i++) {
+					var row = table.insertRow(-1);
+					for(var j = 0; j < columns; j++) {
+						var cell = row.insertCell(-1);
+						cell.innerHTML = "Row" + (i+1) + ", Column " + (j+1);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
